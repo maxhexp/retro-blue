@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#073eaa" />
+  <meta name="description" content="Retro Blue is LACHSA’s student-run record label. Join student artists and creatives making music, live shows, and opportunities together." />
+  <title>Retro Blue • LACHSA’s student-run record label</title>
+  <link rel="preload" href="/assets/Hitchcut-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <a class="skip" href="#intro">Skip to the club introduction</a>
+  <div class="sleeve">
+    <header class="topbar">
+      <p class="location-stamp"><img src="/assets/lachsa-logo.png" alt="LACHSA" width="120" height="45" /></p>
+      <nav aria-label="Main navigation"><button class="nav-about about-open" type="button">About us</button><a class="nav-join signup" href="https://docs.google.com/forms/d/e/1FAIpQLSdduydJRWdV_-2385nqtjUOUac_iZytUQ9uoDY5Bj2g8EDX5Q/viewform">Join us<span class="nav-dog" aria-hidden="true"><img src="/assets/dog.svg" alt="" /></span></a></nav>
+    </header>
+    <main>
+      <div class="masthead"><h1><span>RETRO</span> <span>BLUE</span></h1></div>
+      <section class="opening" aria-labelledby="intro">
+        <div class="introduction">
+          <h2 id="intro">Your music.<br>Your people.<br>Your next stage.</h2>
+          <p class="description"><strong>We’re LACHSA’s student-run record label.</strong> We help student artists grow through live shows, artist support, and creative collaboration.</p>
+          <button class="ticket" id="shows-open" type="button"><span>Shows & tickets</span><span class="ticket-end" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 32 32 8M10 8h22v22"/></svg></span></button>
+        </div>
+        <div class="artwork record-artwork">
+          <div class="vinyl-stack" role="group" aria-label="Three dog records">
+            <button class="stack-record" data-slot="0" aria-label="Dog covering its ears: next record" aria-pressed="true"><span class="vinyl-disc"></span><span class="dog-record-label"><span class="dog-portrait dog-ears"></span></span></button>
+            <button class="stack-record" data-slot="1" aria-label="Bring dog covering its eyes to the front" aria-pressed="false"><span class="vinyl-disc"></span><span class="dog-record-label"><span class="dog-portrait dog-eyes"></span></span></button>
+            <button class="stack-record" data-slot="2" aria-label="Bring dog covering its mouth to the front" aria-pressed="false"><span class="vinyl-disc"></span><span class="dog-record-label"><span class="dog-portrait dog-mouth"></span></span></button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="activities-footer"><ul class="club-areas" aria-label="What we do">
+      <li class="activity-sleeve live-sleeve"><svg viewBox="0 0 160 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5"><rect x="62" y="10" width="36" height="55" rx="18" transform="rotate(20 80 37)"/><path d="M48 45q-4 35 30 38t40-27M78 83v17M61 27l34 12M58 40l34 12"/></g></svg><h2>Live<br>shows</h2></li>
+      <li class="activity-sleeve support-sleeve"><svg viewBox="0 0 160 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5"><path d="M35 71V49a45 45 0 0 1 90 0v22"/><rect x="25" y="48" width="24" height="42" rx="9"/><rect x="111" y="48" width="24" height="42" rx="9"/></g></svg><h2>Artist<br>support</h2></li>
+      <li class="activity-sleeve photo-sleeve"><svg viewBox="0 0 160 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5"><path d="M22 27h30l9-14h38l9 14h30v61H22z"/><circle cx="80" cy="56" r="22"/><path d="M116 39h11"/></g></svg><h2>Photography<br>& content</h2></li>
+      <li class="activity-sleeve creative-sleeve"><svg viewBox="0 0 160 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5"><circle cx="59" cy="48" r="33"/><circle cx="101" cy="48" r="33"/><path d="m70 33 20 30m-20 0 20-30"/></g></svg><h2>Creative<br>collaboration</h2></li>
+    </ul></footer>
+  </div>
+  <dialog id="about" aria-labelledby="about-title"><div class="dialog-top"><span>THE LINER NOTES</span><button id="close-about" aria-label="Close about the club">×</button></div><h2 id="about-title">About<br>Retro Blue</h2><p><strong>Retro Blue is LACHSA’s first-ever student-run record label, created by students, for students.</strong> We are a creative community dedicated to helping LACHSA artists turn their ideas into real opportunities while gaining hands-on experience in the music industry.</p><p>Our mission is to connect talented student musicians with the people and resources they need to grow as artists. We work with independent LACHSA artists through artist management, promotion, social media, live performances, photography, creative content, collaborations, and event production.</p><p>One of our main goals is to create more opportunities for LACHSA students to perform outside of school by producing and organizing student shows at venues throughout Los Angeles.</p><p class="credit">Kate Mori</p><a class="dialog-join signup" href="https://docs.google.com/forms/d/124CdjJ-ANyZUWh7qmuTOsptPx3foQfE0oqNQXuovQaU/viewform">Join the club</a></dialog>
+  <dialog id="signup-dialog" aria-labelledby="signup-title">
+    <button class="signup-close" id="close-signup" aria-label="Close signup">×</button>
+    <div class="signup-layout">
+      <div class="signup-welcome"><h2 id="signup-title">Join the<br>club.</h2><button id="dog-wiggle" class="mascot-greeting" aria-label="Say hi to the dog"><span id="signup-dog" aria-hidden="true"></span></button></div>
+      <div class="signup-form"><p class="form-status">Form not appearing? <a id="form-external" href="https://docs.google.com/forms/d/e/1FAIpQLSdduydJRWdV_-2385nqtjUOUac_iZytUQ9uoDY5Bj2g8EDX5Q/viewform" target="_blank" rel="noopener noreferrer">Click here</a></p><iframe id="signup-frame" title="Retro Blue club interest form"></iframe></div>
+    </div>
+  </dialog>
+  <dialog id="shows-dialog" aria-labelledby="shows-title"><div class="dialog-top"><span>LIVE AT RETRO BLUE</span><button id="close-shows" aria-label="Close shows and tickets">×</button></div><h2 id="shows-title">Shows & tickets</h2><p>Event listings are coming. Check back here for show details and ticket links.</p><a class="dialog-join signup" href="https://docs.google.com/forms/d/e/1FAIpQLSdduydJRWdV_-2385nqtjUOUac_iZytUQ9uoDY5Bj2g8EDX5Q/viewform">Interest form</a></dialog>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
