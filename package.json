@@ -4,12 +4,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build"
+    "build": "vite build && node scripts/build-worker.js",
+    "test": "node --test tests/*.test.js",
+    "preview:admin": "wrangler pages dev dist --binding LOCAL_DEV=true --d1 DB=local-only --port 4179"
   },
   "dependencies": {
-    "@splinetool/runtime": "2.0.55"
+    "@splinetool/runtime": "2.0.55",
+    "jose": "^6.2.12"
   },
   "devDependencies": {
-    "vite": "8.3.0"
+    "esbuild": "^0.28.2",
+    "vite": "8.3.0",
+    "wrangler": "^4.151.1"
   }
 }

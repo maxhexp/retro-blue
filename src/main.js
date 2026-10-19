@@ -1,5 +1,7 @@
 import mascotSvg from './dog.svg?raw';
 import {createSignupDog} from './signup-dog-3d.js';
+import {loadContent} from './content-view.js';
+import './content.css';
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const about = document.querySelector('#about');
@@ -35,7 +37,9 @@ document.querySelector('#shows-open').addEventListener('click',()=>shows.showMod
 document.querySelector('#close-shows').addEventListener('click',()=>shows.close());
 const signupDog = document.querySelector('#signup-dog');
 const formFrame = document.querySelector('#signup-frame');
-const formUrl = document.querySelector('#form-external').href;
+let formUrl = document.querySelector('#form-external').href;
+let popupSeconds=15;
+window.addEventListener('retro-settings',event=>{formUrl=event.detail.signupUrl;popupSeconds=event.detail.popupSeconds;});
 let prompted = false;
 try { prompted = sessionStorage.getItem('retro-blue-signup-seen') === 'yes'; } catch {}
 
@@ -115,7 +119,7 @@ function openSignup() {
   if (about.open) about.close();
   if (shows.open) shows.close();
   if (!formFrame.hasAttribute('src')) {
-    formFrame.src = `${formUrl}?embedded=true`;
+    const embedded=new URL(formUrl);embedded.searchParams.set('embedded','true');formFrame.src=embedded.href;
   }
   signup.showModal();
   void dog3d.load();
@@ -195,6 +199,7 @@ reduced.addEventListener('change', () => {
 let activeSeconds = 0;
 const invitationTimer = setInterval(() => {
   if (!document.hidden) activeSeconds++;
-  if (activeSeconds >= 15 && !prompted && !about.open && !signup.open && !shows.open && !document.hidden) openSignup();
+  if (popupSeconds>0 && !new URLSearchParams(location.search).has('preview') && activeSeconds >= popupSeconds && !prompted && !about.open && !signup.open && !shows.open && !document.hidden) openSignup();
   if (prompted) clearInterval(invitationTimer);
 }, 1000);
+void loadContent();
