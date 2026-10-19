@@ -1,6 +1,6 @@
 # Retro Blue website editor
 
-The editor is implemented locally. Production sign-in and deployment are pending Google Cloud account setup.
+The editor is deployed at https://retroblue.pages.dev/admin/. Google sign-in is configured in production. The first complete live login and editing session still needs verification in the manager's browser.
 
 ## Manager workflow
 
@@ -31,16 +31,18 @@ Completed in Cloudflare:
 
 - Created the D1 database on the existing free plan.
 - Executed `server/schema.sql`.
-- Added production Pages binding `DB` to this database. It takes effect on the next deployment.
+- Added production Pages binding `DB` to this database and deployed the backend.
+- Configured `GOOGLE_CLIENT_ID` and deployed it.
+- Seeded the two approved owners once after explicit access confirmation. Do not rerun the seed after team changes.
+- Published the November 6 Lyric Hyperion flyer, without a ticket link.
+- Created the Google Auth web client in project `retro-blue`, authorized only for `https://retroblue.pages.dev`, and moved Google Auth to production. No billing account was linked. Future managers can be added through Team without maintaining Google's test-user list.
+- Published the factual website data-use notice at `/privacy`.
 
 Pending:
 
-- User must enable Google account two-step verification to access Google Cloud Console.
-- Create a dedicated Retro Blue Google Auth web client, without linking a billing account. Use the production origin `https://retroblue.pages.dev`. Only basic Google identity is needed; no Gmail, Drive, contacts or calendar permissions.
-- Set the Pages production variable `GOOGLE_CLIENT_ID` to this web client ID. A Google client secret is not needed for the Google Identity Services button/token flow.
-- Seed the two approved owners once using local, gitignored `server/seed-owners.sql`; do not rerun after team changes. Account grants must be confirmed as required by the browser workflow.
-- Deploy reviewed code from GitHub main to the existing Pages project.
-- Test allowed/denied Google accounts, editor restrictions, owner changes, upload, draft preview, publish/restore, sign-out and expiry on production before handoff.
+- Complete a live manager login, then verify upload, draft preview, publish and sign-out. The Google button renders, but the automated in-app browser did not open the account chooser. These flows and authorization checks pass local tests; that is not a substitute for live sign-in verification.
+
+Only basic Google identity is needed; no Gmail, Drive, contacts or calendar permissions. A Google client secret is not used by this Google Identity Services button/token flow.
 
 Cloudflare Access was NOT activated. Its free-plan checkout required a payment method and authorization for overage charges. The user selected Google sign-in without billing instead. Do not enable Cloudflare Zero Trust or paid services as a workaround.
 
