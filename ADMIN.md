@@ -1,6 +1,6 @@
 # Retro Blue website editor
 
-The editor is deployed at https://retroblue.pages.dev/admin/. Google sign-in is configured in production. The first complete live login and editing session still needs verification in the manager's browser.
+The editor is deployed at https://retroblue.pages.dev/admin/. Google sign-in and the live owner editing flow were verified on October 19, 2026.
 
 ## Manager workflow
 
@@ -38,9 +38,14 @@ Completed in Cloudflare:
 - Created the Google Auth web client in project `retro-blue`, authorized only for `https://retroblue.pages.dev`, and moved Google Auth to production. No billing account was linked. Future managers can be added through Team without maintaining Google's test-user list.
 - Published the factual website data-use notice at `/privacy`.
 
-Pending:
+Live verification:
 
-- Complete a live manager login, then verify upload, draft preview, publish and sign-out. The Google button renders, but the automated in-app browser did not open the account chooser. These flows and authorization checks pass local tests; that is not a substitute for live sign-in verification.
+- The user completed Google sign-in and the editor recognized the owner role.
+- Both approved owner accounts appeared in Team.
+- Uploaded the same Lyric Hyperion flyer through the editor, saved a draft, verified its protected preview, and published it.
+- Confirmed the public site loaded the uploaded database image without a deployment and History recorded the prior version.
+- Authorization, last-owner protection, stale-write protection and token checks also pass automated tests. Sign-out and expiry are covered by tests, not a full live expiry wait. The user remains signed in.
+- If the login page has been open more than five minutes, refresh it before signing in to renew its challenge.
 
 Only basic Google identity is needed; no Gmail, Drive, contacts or calendar permissions. A Google client secret is not used by this Google Identity Services button/token flow.
 
